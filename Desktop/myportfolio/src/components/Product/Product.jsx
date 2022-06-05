@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../../Responsive'
 
 const Container = styled.div`
   width: 30%;
@@ -12,6 +13,7 @@ const Container = styled.div`
   border-radius: 10px 10px 0px 0px;
   overflow: hidden;
   cursor: pointer;
+  ${mobile({ width: '40%', height: '20vh', marginButtom: '0px' })}
 `
 const PBroswer = styled.div`
   height: 20px;

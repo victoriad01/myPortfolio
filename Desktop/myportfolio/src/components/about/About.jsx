@@ -2,11 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import image1 from '../../Pictures/Man-Download-PNG.png'
 import image2 from '../../Pictures/Award-PNG-Transparent.png'
+import { mobile } from '../../Responsive'
 
 const Abt = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
+  ${mobile({ flexDirection: 'column', marginTop: '0px' })}
 `
 const AbtLeft = styled.div`
   flex: 1;
@@ -15,6 +17,7 @@ const AbtLeft = styled.div`
   justify-content: center;
   height: 100%;
   position: relative;
+  ${mobile({ flexDirection: 'column', marginTop: '0px' })}
 `
 const AbtCardBg = styled.div`
   background-color: gray;
@@ -23,6 +26,7 @@ const AbtCardBg = styled.div`
   left: 50;
   z-index: 2;
   padding-left: 50px;
+  ${mobile({ display: 'none' })}
 `
 const AbtCard = styled.div`
   height: 70vh;
@@ -31,6 +35,7 @@ const AbtCard = styled.div`
   background-color: gray;
   position: relative;
   overflow: hidden;
+  ${mobile({ height: '30vh', width: '100%' })}
 `
 const AbtCardImg = styled.img`
   width: 100%;
@@ -39,14 +44,16 @@ const AbtCardImg = styled.img`
 `
 const AbtRight = styled.div`
   flex: 1;
+  ${mobile({ textAlign: 'center', flexDirection: 'column', marginTop: '0px' })}
 `
-
 const AboutMe = styled.h2`
   margin-bottom: 20px;
+  ${mobile({ marginTop: '40px', marginBottom: '0px' })}
 `
 const AboutMeText = styled.p`
   width: 80%;
   line-height: 1.9;
+  ${mobile({ textAlign: 'justify', width: '90%', padding: '20px' })}
 `
 const AwardSide = styled.div`
   margin-top: 20px;
@@ -54,27 +61,34 @@ const AwardSide = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
-`
-const AwardTitle = styled.h4`
-  color: gray;
+  ${mobile({ marginTop: '0px', padding: '10px' })}
 `
 const ImageWrap = styled.div``
 const AwardImage = styled.img`
   width: 100px;
   height: 100px;
   margin-right: 40px;
+  ${mobile({
+    width: '50px',
+    height: '50px',
+    padding: '20px',
+    marginRight: '10px',
+  })}
 `
 const StoryWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
 `
+const AwardTitle = styled.h4`
+  color: gray;
+  ${mobile({ textAlign: 'left', fontWeight: '800', fontSize: '14px' })}
+`
 const AwardText = styled.p`
   margin-top: 10px;
   font-size: 12px;
-  width: 70%;
+  ${mobile({ textAlign: 'left', width: '90%' })}
 `
-
 function About() {
   return (
     <Abt>

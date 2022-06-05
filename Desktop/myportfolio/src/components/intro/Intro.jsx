@@ -1,17 +1,19 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import mypicture from '../../Pictures/Man-Download-PNG.png'
-// import scroll from '../../Pictures/Scroll.svg'
+import { mobile } from '../../Responsive'
 
 const IntroHeader = styled.h1`
   display: flex;
   height: 100vh;
+  ${mobile({ flexDirection: 'column' })}
 `
 const IntroHeaderLeft = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  ${mobile({ flexDirection: 'column' })}
 `
 const LeftWrapper = styled.div`
   padding: 50px;
@@ -20,6 +22,12 @@ const LeftWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  ${mobile({
+    flexDirection: 'column',
+    height: '50%',
+    padding: '20px',
+    margin: '20px',
+  })}
 `
 const LeftIntro = styled.h5`
   font-size: 30px;
@@ -48,15 +56,17 @@ const TitleContainerItem = styled.div`
   height: 50px;
   font-size: 30px;
   font-weight: 800;
-  color: green;
+  color: 'green';
   letter-spacing: 0.3rem;
   display: flex;
   align-items: center;
+  ${mobile({ fontSize: '18px' })}
 `
 const IntroDesc = styled.p`
   font-size: 14px;
   letter-spacing: 0.12rem;
   line-height: 1.5rem;
+  ${mobile({ display: 'none' })}
 `
 const IntroHeaderRight = styled.div`
   flex: 1;
@@ -64,6 +74,7 @@ const IntroHeaderRight = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  ${mobile({ display: 'none' })}
 `
 const Image = styled.img`
   height: 100%;
@@ -93,7 +104,6 @@ function Intro() {
               <TitleContainerItem>Frontend Web Developer</TitleContainerItem>
               <TitleContainerItem>Backend Web Developer</TitleContainerItem>
               <TitleContainerItem>Full Stack Developer</TitleContainerItem>
-              <TitleContainerItem>Software Engineer</TitleContainerItem>
               <TitleContainerItem>Software Engineer</TitleContainerItem>
             </TitleContainerWrapper>
           </TitleContainer>

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { ModeNight, LightMode } from '@mui/icons-material/'
+import { ThemeContext } from '../../context'
 
 const ToggleContainer = styled.div`
   width: 50px;
@@ -25,11 +26,19 @@ const Button = styled.button`
   cursor: pointer;
 `
 function Toggle() {
+  const theme = useContext(ThemeContext)
+
+  const handleClick = () => {
+    theme.dispatch({ type: 'TOGGLE' })
+  }
   return (
     <ToggleContainer>
       <LightMode></LightMode>
       <ModeNight></ModeNight>
-      <Button></Button>
+      <Button
+        onClick={handleClick}
+        style={{ left: theme.state.darkMode ? 0 : 25 }}
+      ></Button>
     </ToggleContainer>
   )
 }
