@@ -2,7 +2,7 @@ import image1 from './Pictures/ecommadmin.png'
 import image2 from './Pictures/ecommproductlist.png'
 import image3 from './Pictures/shoppingtrackerLand.png'
 import image4 from './Pictures/ecommsingleproduct.png'
-import image5 from './Pictures/port.png'
+import image5 from './Pictures/port_2.png'
 import image6 from './Pictures/ecommland.png'
 
 export const products = [

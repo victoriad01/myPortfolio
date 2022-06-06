@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { mobile } from '../../Responsive'
+import { mobile, tablets, latops } from '../../Responsive'
 
 const Container = styled.div`
   width: 30%;
@@ -14,6 +14,8 @@ const Container = styled.div`
   overflow: hidden;
   cursor: pointer;
   ${mobile({ width: '40%', height: '20vh', marginButtom: '0px' })}
+  ${tablets({ width: '40%', height: '22vh', marginButtom: '0px' })}
+  ${latops({ width: '40%', height: '22vh', marginButtom: '0px' })}
 `
 const PBroswer = styled.div`
   height: 20px;

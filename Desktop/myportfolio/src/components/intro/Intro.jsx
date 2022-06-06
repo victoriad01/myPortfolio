@@ -1,12 +1,13 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import mypicture from '../../Pictures/Man-Download-PNG.png'
-import { mobile } from '../../Responsive'
+import mypicture1 from '../../Pictures/my display port new.png'
+import { mobile, tablets, latops } from '../../Responsive'
 
 const IntroHeader = styled.h1`
   display: flex;
   height: 100vh;
   ${mobile({ flexDirection: 'column' })}
+  ${tablets({ flexDirection: 'column' })}
 `
 const IntroHeaderLeft = styled.div`
   flex: 1;
@@ -14,6 +15,7 @@ const IntroHeaderLeft = styled.div`
   align-items: center;
   justify-content: center;
   ${mobile({ flexDirection: 'column' })}
+  ${tablets({ flexDirection: 'column' })}
 `
 const LeftWrapper = styled.div`
   padding: 50px;
@@ -28,11 +30,23 @@ const LeftWrapper = styled.div`
     padding: '20px',
     margin: '20px',
   })}
+
+  ${tablets({
+    flexDirection: 'column',
+    height: '50%',
+    padding: '20px',
+    margin: '20px',
+  })}
+
+  ${latops({ height: '75%' })}
 `
 const LeftIntro = styled.h5`
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 200;
   letter-spacing: 0.12rem;
+  ${mobile({
+    width: '30%',
+  })}
 `
 const LeftName = styled.h1`
   font-size: 50px;
@@ -61,6 +75,8 @@ const TitleContainerItem = styled.div`
   display: flex;
   align-items: center;
   ${mobile({ fontSize: '18px' })}
+  ${tablets({ fontSize: '18px' })}
+  ${latops({ fontSize: '20px' })}
 `
 const IntroDesc = styled.p`
   font-size: 14px;
@@ -75,6 +91,7 @@ const IntroHeaderRight = styled.div`
   justify-content: center;
   position: relative;
   ${mobile({ display: 'none' })}
+  ${tablets({ display: 'none' })}
 `
 const Image = styled.img`
   height: 100%;
@@ -116,7 +133,7 @@ function Intro() {
         </LeftWrapper>
       </IntroHeaderLeft>
       <IntroHeaderRight>
-        <Image src={mypicture}></Image>
+        <Image src={mypicture1}></Image>
         <Bg></Bg>
       </IntroHeaderRight>
     </IntroHeader>

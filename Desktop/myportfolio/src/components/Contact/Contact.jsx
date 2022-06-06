@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { PhoneAndroid, Email } from '@mui/icons-material'
 import emailjs from '@emailjs/browser'
 import { ThemeContext } from '../../context'
-import { mobile } from '../../Responsive'
+import { mobile, tablets, latops } from '../../Responsive'
 
 const Container = styled.div`
   height: 100vh;
@@ -27,7 +27,12 @@ const WrapperLeft = styled.div`
 const LeftTitle = styled.h1`
   font-size: 50px;
   width: 80%;
-  ${mobile({ fontSize: '26px', width: '90%' })}
+  ${mobile({
+    fontSize: '26px',
+    width: '90%',
+    marginTop: '20px',
+    marginButtom: '20px',
+  })}
 `
 const Info = styled.div``
 const InfoItem = styled.div`
@@ -38,6 +43,7 @@ const InfoItem = styled.div`
 `
 const Text = styled.h4`
   margin-left: 20px;
+  color: gray;
   ${mobile({ marginLeft: '10px' })}
 `
 const WrapperRight = styled.div`
@@ -47,9 +53,31 @@ const WrapperRight = styled.div`
   align-items: center;
   justify-content: center;
 `
+const QuestionText = styled.div``
 const Dec = styled.p`
   font-weight: 200;
-  ${mobile({ width: '90%', fontSize: '12px', lineHeight: '1.6' })}
+  width: 60%;
+  margin: 0;
+  text-align: left;
+
+  ${mobile({
+    width: '90%',
+    fontSize: '12px',
+    lineHeight: '1.6',
+    marginTop: '20px',
+  })}
+
+  ${tablets({
+    width: '90%',
+    fontSize: '12px',
+    lineHeight: '1.6',
+    marginTop: '20px',
+    textAlign: 'left',
+    paddingLeft: 0,
+    marginLeft: 0,
+  })}
+
+  ${latops({ width: '80%' })}
 `
 const Form = styled.form`
   margin-top: 20px;
@@ -63,6 +91,8 @@ const Input = styled.input`
   font-size: 18px;
   padding-left: 10px;
   ${mobile({ width: '100%' })}
+  ${tablets({ width: '100%' })}
+  ${latops({ width: '80%' })}
 `
 const TextArea = styled.textarea`
   width: 100%;
@@ -83,7 +113,6 @@ const Button = styled.button`
     background-color: black;
   }
 `
-
 function Contact() {
   const formRef = useRef()
   const [sent, setSent] = useState(false)
@@ -130,10 +159,13 @@ function Contact() {
           </Info>
         </WrapperLeft>
         <WrapperRight>
-          <Dec>
-            <b>What do you want</b> me to design for you? You will definitely
-            get the best of website design.
-          </Dec>
+          <QuestionText>
+            <Dec>
+              <b style={{ padding: 0, margin: 0 }}>What do you want</b> me to
+              design for you? You will definitely get the best of website
+              design.
+            </Dec>
+          </QuestionText>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Input
               style={{
@@ -167,7 +199,7 @@ function Contact() {
                 backgroundColor: darkMode && '#333',
                 color: darkMode && '#b8afaf',
               }}
-              rows={5}
+              rows={7}
               placeholder='Message'
               name='message'
             ></TextArea>
